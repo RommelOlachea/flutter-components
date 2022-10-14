@@ -4,7 +4,7 @@ class AlertScreen extends StatelessWidget {
   const AlertScreen({Key? key}) : super(key: key);
 
   void displayDialog() {
-    print('Hola mundo');
+    print('Hola mundo2222');
   }
 
   @override
