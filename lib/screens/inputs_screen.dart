@@ -5,10 +5,26 @@ class InputsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('InputsScreen'),
-      ),
-    );
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Inputs y Forms'),
+        ),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Column(
+              children: [
+                TextFormField(
+                  autofocus: true,
+                  initialValue: 'Rommel Olachea Cota',
+                  textCapitalization: TextCapitalization.words,
+                  onChanged: (value) {
+                    print(value);
+                  },
+                )
+              ],
+            ),
+          ),
+        ));
   }
 }
