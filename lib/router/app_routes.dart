@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_components/models/models.dart';
-import 'package:flutter_components/screens/animated_screen.dart';
 import 'package:flutter_components/screens/screens.dart';
 
 class AppRoute {
@@ -42,6 +41,11 @@ class AppRoute {
         route: 'animated',
         name: 'Animated Container',
         screen: const AnimatedScreen(),
+        icon: Icons.play_circle_outline_rounded),
+    MenuOption(
+        route: 'inputs',
+        name: 'Text Inputs',
+        screen: const InputsScreen(),
         icon: Icons.play_circle_outline_rounded),
   ];
 
