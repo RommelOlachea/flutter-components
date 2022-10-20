@@ -37,6 +37,14 @@ class _ListviewBuilderScreenState extends State<ListviewBuilderScreen> {
     add5();
     isLoading = false;
     setState(() {});
+
+    if (scrollController.position.pixels + 100 <=
+        scrollController.position.maxScrollExtent) return;
+    scrollController.animateTo(
+        scrollController.position.pixels +
+            100, //indica hasta que punto del nuevo scroll necesito moverme
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.fastOutSlowIn);
   }
 
   void add5() {
@@ -70,11 +78,12 @@ class _ListviewBuilderScreenState extends State<ListviewBuilderScreen> {
                         'https://picsum.photos/id/${imagesIds[index]}/500/300'));
               },
             ),
-            Positioned(
-                bottom: 40,
-                left: size.width * 0.5 -
-                    30, // se le restan 30 que es la mitad del tamaño del Container del _LoadingIcon
-                child: const _LoadingIcon())
+            if (isLoading)
+              Positioned(
+                  bottom: 40,
+                  left: size.width * 0.5 -
+                      30, // se le restan 30 que es la mitad del tamaño del Container del _LoadingIcon
+                  child: const _LoadingIcon())
           ],
         ),
       ),
